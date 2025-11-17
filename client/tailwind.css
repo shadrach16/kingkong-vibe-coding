@@ -1,0 +1,87 @@
+/* Import Tailwind's base styles, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply a default font, background color, and text color for a light theme */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F3F4F6; /* A very light gray background */
+  color: #1F2937; /* A dark gray for the main text */
+  @apply antialiased; /* Use Tailwind's antialiasing for smoother fonts */
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E5E7EB; /* Lighter track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9CA3AF; /* A darker gray thumb */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6B7280; /* Even darker on hover */
+}
+
+/* --- Component Overrides and Utility Classes --- */
+
+/* Overrides for common components to match the new light theme */
+
+.prose pre {
+  @apply bg-gray-100 border border-gray-300 text-gray-800;
+}
+
+/* Auth forms and cards */
+.auth-card {
+  @apply bg-white border border-gray-200 shadow-lg;
+}
+
+.auth-input {
+  @apply w-full px-4 py-3 bg-gray-100 text-gray-900 border border-gray-300 rounded-lg placeholder-gray-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+.auth-button {
+  @apply w-full flex justify-center py-3 px-4 border border-transparent rounded-lg text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200;
+}
+
+/* Sidebar and Header styles */
+.sidebar {
+  @apply bg-white border-r border-gray-200;
+}
+
+.header {
+  @apply bg-white border-b border-gray-200;
+}
+
+/* React Select styling */
+.react-select-container .react-select__control {
+  @apply bg-gray-100 border-gray-300 text-gray-900 rounded-lg cursor-pointer transition-colors duration-200;
+}
+
+.react-select-container .react-select__control--is-focused {
+  @apply border-blue-500 ring-2 ring-blue-500 shadow-none;
+}
+
+.react-select-container .react-select__single-value {
+  @apply text-gray-900;
+}
+
+.react-select-container .react-select__menu {
+  @apply bg-white border border-gray-200 rounded-lg shadow-xl;
+}
+
+.react-select-container .react-select__option {
+  @apply bg-white text-gray-900 hover:bg-gray-100 transition-colors duration-100 cursor-pointer;
+}
+
+.react-select-container .react-select__option--is-selected {
+  @apply bg-blue-600 text-white;
+}
