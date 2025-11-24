@@ -1,80 +1,86 @@
-# KingKong: AI-Native Backend-as-a-Service
+# 🦍 Kingkong: The Vibe Coding Platform
 
-KingKong is a revolutionary platform that allows developers to build and deploy robust backends using simple, natural language prompts. This project is structured as a monorepo, containing both the React frontend and the Node.js backend.
+![Status](https://img.shields.io/badge/Status-Beta_Access-purple)
+![AI](https://img.shields.io/badge/Powered_by-LLM_Agents-green)
+![Stack](https://img.shields.io/badge/Stack-React_|_Node.js_|_AI_Workflow-blue)
 
-KingKong AI Platform Features
+> **"Stop writing boilerplate. Start Vibe Coding."**
+> Kingkong is a Natural Language Development Environment that eliminates the tedious setup of backend architecture. You describe the data; the AI builds the infrastructure.
 
-The KingKong platform is designed to provide developers and businesses with a centralized environment for AI task execution, custom tool integration, and serverless deployment.
+---
 
-# Core Feature Set
+## 🔮 The Concept: Vibe Coding
 
-1. AI Task Execution & Playground
+Traditional development requires defining models, writing migrations, setting up API endpoints, and configuring data types before you even write a single line of business logic.
 
-    `AI Playground: A dedicated interface for users to test prompts and queries against the underlying AI models.`
+**Kingkong** flips this workflow. It uses an **AI Agent Workflow** to translate intent into execution instantly. It allows non-technical founders to build sophisticated data structures and allows senior developers to prototype backends in seconds.
 
-    `Prompt Templates: Support for saving and utilizing pre-defined prompt templates to streamline common tasks (e.g., "Find users by country," "Count users by status").`
+---
 
-    `AI Configuration: Users can configure AI execution settings, such as the optimiseTask toggle, to fine-tune the performance and output of the AI tasks.`
+## ✨ Key AI Features
 
-    `Core AI Task API: A dedicated backend route (/kingkong/run-tasks) to process and execute AI-driven tasks programmatically.`
+### 1. Natural Language to SQL Schema
+Don't write `CREATE TABLE` statements. Just tell Kingkong what you need.
 
-2. Internal Functions and Tooling
+> **User Prompt:** *"I need a CRM system to track Customers, their Orders, and a Sales Representative assigned to each."*
+>
+> **Kingkong Action:** Instantly generates the relational schema, creates the `Customers`, `Orders`, and `SalesReps` tables, and sets up the Foreign Key relationships automatically.
 
-    `Internal Functions Management: Complete CRUD (Create, Read, Update, Delete) functionality for managing custom, user-defined "Internal Functions" .`
+### 2. Automatic Data Type Inference
+The AI doesn't just create text fields; it understands context.
+* If you ask for "Email", it sets the type to `String (Email Format)`.
+* If you ask for "Salary", it sets the type to `Decimal/Float`.
+* If you ask for "Date Joined", it sets the type to `Timestamp`.
 
-    `Function Execution: API support for running these internal functions (/internal-functions/:projectId/functions/:functionId/run), suggesting they are tools the AI can call or that can be triggered manually.`
+### 3. Intelligent Visualization Inference (Auto-Charts)
+Kingkong analyzes the *shape* of your data to recommend the best way to view it.
+* **Categorical Data?** It renders a Bar Chart or Pie Chart automatically.
+* **Time-Series Data?** It renders a Line Graph.
+* **Geographical Data?** It renders a Map view.
+* *No manual configuration required.*
 
-    `Integration with AI: The playground data suggests these functions are callable via natural language prompts (e.g., !sendEmail), indicating a powerful AI Tool-Use or Function Calling capability.`
+---
 
-3. Serverless Deployment
+## 🛠️ How It Works (The Agent Workflow)
 
-    `Serverless Function Creation: Dedicated routes for creating and deploying serverless functions, likely to host external or more complex user logic on the platform.`
+The platform runs on a multi-step AI Agent system:
 
-4. Logging and Monitoring
+1.  **Intent Parsing:** The LLM breaks down the user's natural language prompt into technical requirements.
+2.  **Schema Generation:** The Agent constructs a JSON representation of the database structure.
+3.  **Execution:** The Node.js backend executes the schema changes directly on the database.
+4.  **UI Hydration:** The React frontend automatically generates forms and tables to match the new schema.
 
-    `Centralized Logging Dashboard: A comprehensive for viewing all system, function, and AI execution logs.`
+---
 
-    `Advanced Filtering: Capabilities to filter logs by severity level, associated project, specific date, and content search term.`
+## 📸 Demo
 
-    `Log Control: Functionality to sort logs in ascending or descending chronological order.`
+*(Placeholder for screenshots. Recommended: Show a split screen. Left side: A simple text prompt. Right side: A fully built table and dashboard.)*
 
-5. Platform Management and Analytics
+<div align="center">
+  <img src="./assets/2025-11-24 05_01_52-.png" alt="Kingkong Interface" width="800">
+</div>
 
-    `Project Scoping: All core features (Internal Functions, Logs) are organized and accessed within specific user-created projects.`
+---
 
-    `Usage Metrics: A dedicated route to retrieve and display usage metrics, allowing users to monitor their consumption of platform resources.`
+## 💻 Tech Stack
 
-    `Plan and Billing: API access to different pricing plans, indicating support for managing subscription tiers and features.`
+* **Frontend:** React.js (Dynamic Form Generation, Dashboarding)
+* **Backend:** Node.js (Schema Management, API Layer)
+* **AI Logic:** LLM Agent Workflow (Prompt Chaining, Context Management)
+* **Database:** (SQL/NoSQL agnostic architecture)
 
-## Getting Started
+---
 
-Follow the steps below to set up the project and begin development.
+## 🚀 Future Roadmap
 
-### Prerequisites
+* [ ] **Voice-to-Schema:** Build backends using voice commands.
+* [ ] **API Export:** One-click export of the generated backend to a standalone Express.js app.
+* [ ] **Integration:** Connect with Zapier/Webhooks for external automation.
 
--   Node.js (v18 or higher)
--   npm
+---
 
-### Installation
+## 👨‍💻 Author
 
-1.  Clone the repository:
-    `git clone <repository-url> kingkong`
-    `cd kingkong`
-
-2.  Install dependencies for both the client and server:
-    `npm run install:all`
-
-### Running the Application
-
-To start both the frontend and the backend concurrently in development mode, run:
-`npm run dev`
-
-The frontend will be available at `http://localhost:3000` and the backend at `http://localhost:5000`.
-
-Seed the database for billings, run:
-`npm run seed`
-
-## Directory Structure
-
--   `client/`: The React frontend application.
--   `server/`: The Node.js backend application.
+**Tunde Oluwamo**
+*Full Stack Developer & AI Integrations Specialist*
+[ linkedin.com/in/oluwamo-shadrach-740242185 ]
