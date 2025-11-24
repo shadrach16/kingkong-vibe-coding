@@ -1,86 +1,80 @@
 # 🦍 Kingkong: The Vibe Coding Platform
 
 ![Status](https://img.shields.io/badge/Status-Beta_Access-purple)
-![AI](https://img.shields.io/badge/Powered_by-LLM_Agents-green)
-![Stack](https://img.shields.io/badge/Stack-React_|_Node.js_|_AI_Workflow-blue)
+![AI](https://img.shields.io/badge/AI-Function_Calling_&_Agents-green)
+![Infrastructure](https://img.shields.io/badge/Infra-Serverless_&_Node.js-blue)
 
 > **"Stop writing boilerplate. Start Vibe Coding."**
-> Kingkong is a Natural Language Development Environment that eliminates the tedious setup of backend architecture. You describe the data; the AI builds the infrastructure.
+> Kingkong is a Natural Language Development Environment that allows developers and founders to build, execute, and monitor sophisticated backend architectures using only natural language.
 
 ---
 
 ## 🔮 The Concept: Vibe Coding
 
-Traditional development requires defining models, writing migrations, setting up API endpoints, and configuring data types before you even write a single line of business logic.
+Traditional development requires defining models, writing migrations, and configuring servers before logic exists. **Kingkong** flips this workflow using an **AI Agent Workflow**.
 
-**Kingkong** flips this workflow. It uses an **AI Agent Workflow** to translate intent into execution instantly. It allows non-technical founders to build sophisticated data structures and allows senior developers to prototype backends in seconds.
-
----
-
-## ✨ Key AI Features
-
-### 1. Natural Language to SQL Schema
-Don't write `CREATE TABLE` statements. Just tell Kingkong what you need.
-
-> **User Prompt:** *"I need a CRM system to track Customers, their Orders, and a Sales Representative assigned to each."*
->
-> **Kingkong Action:** Instantly generates the relational schema, creates the `Customers`, `Orders`, and `SalesReps` tables, and sets up the Foreign Key relationships automatically.
-
-### 2. Automatic Data Type Inference
-The AI doesn't just create text fields; it understands context.
-* If you ask for "Email", it sets the type to `String (Email Format)`.
-* If you ask for "Salary", it sets the type to `Decimal/Float`.
-* If you ask for "Date Joined", it sets the type to `Timestamp`.
-
-### 3. Intelligent Visualization Inference (Auto-Charts)
-Kingkong analyzes the *shape* of your data to recommend the best way to view it.
-* **Categorical Data?** It renders a Bar Chart or Pie Chart automatically.
-* **Time-Series Data?** It renders a Line Graph.
-* **Geographical Data?** It renders a Map view.
-* *No manual configuration required.*
+You describe the data or the task; the AI builds the infrastructure, generates the schema, and even executes complex logic on demand.
 
 ---
 
-## 🛠️ How It Works (The Agent Workflow)
+## 🚀 Core Features
 
-The platform runs on a multi-step AI Agent system:
+### 1. 🧠 AI Task Execution & Playground
+A dedicated environment to move from "Prompt" to "Production" safely.
+* **AI Playground:** A sandbox interface to test natural language queries against your data models before implementing them.
+* **Prompt Templates:** Save and reuse complex prompt engineering logic (e.g., *"Find users by country and calculate LTV"*) to streamline recurring tasks.
+* **Smart Configuration:** Fine-tune the AI's behavior using the `optimiseTask` toggle to balance speed vs. reasoning depth.
+* **Core API:** Programmatic access via `/kingkong/run-tasks` to execute AI-driven logic from external applications.
 
-1.  **Intent Parsing:** The LLM breaks down the user's natural language prompt into technical requirements.
-2.  **Schema Generation:** The Agent constructs a JSON representation of the database structure.
-3.  **Execution:** The Node.js backend executes the schema changes directly on the database.
-4.  **UI Hydration:** The React frontend automatically generates forms and tables to match the new schema.
+### 2. 🛠️ Internal Functions & AI Tool Use
+Kingkong bridges the gap between text and code. The AI isn't just a chatbot; it is an agent that can use tools.
+* **Function Calling (`!func`):** The AI can trigger your custom code via natural language prompts.
+    * *Example:* Typing `!sendEmail to all users in Lagos` triggers the internal email function automatically.
+* **CRUD Management:** A full suite to Create, Read, Update, and Delete custom internal functions.
+* **Execution API:** Dedicated routes (`/internal-functions/:projectId/...`) to trigger these functions manually or via webhooks.
+
+### 3. ☁️ Serverless Architecture
+* **Serverless Deployment:** Deploy complex user logic as isolated serverless functions directly from the platform.
+* **Scalability:** Designed to handle variable loads without managing physical servers.
+
+### 4. 📊 Observability & Monitoring
+A "Mission Control" for your backend application.
+* **Centralized Logging Dashboard:** View all system events, function executions, and AI reasoning logs in one place.
+* **Advanced Filtering:** Drill down by Severity (Info/Error), Project ID, Date, or specific content keywords.
+* **Usage Analytics:** Monitor resource consumption and plan limits via a dedicated analytics route.
 
 ---
 
-## 📸 Demo
-
-*(Placeholder for screenshots. Recommended: Show a split screen. Left side: A simple text prompt. Right side: A fully built table and dashboard.)*
+## 📸 Interface Sneak Peek
 
 <div align="center">
-  <img src="./assets/2025-11-24 05_01_52-.png" alt="Kingkong Interface" width="800">
+  <img src="./assets/2025-11-24 05_01_52-.png" alt="Kingkong AI Playground" width="800">
+  <p><em>Figure 1: The AI Playground for testing Natural Language Queries</em></p>
 </div>
 
 ---
 
 ## 💻 Tech Stack
 
-* **Frontend:** React.js (Dynamic Form Generation, Dashboarding)
-* **Backend:** Node.js (Schema Management, API Layer)
-* **AI Logic:** LLM Agent Workflow (Prompt Chaining, Context Management)
-* **Database:** (SQL/NoSQL agnostic architecture)
+* **Frontend:** React.js (Playground, Log Dashboard, Function Editor)
+* **Backend:** Node.js (API Gateway, Task Orchestration)
+* **Infrastructure:** Serverless Functions
+* **AI Logic:** LLM Agent Workflow with Tool-Use capabilities
 
 ---
 
-## 🚀 Future Roadmap
+## 🛤️ API Highlights
 
-* [ ] **Voice-to-Schema:** Build backends using voice commands.
-* [ ] **API Export:** One-click export of the generated backend to a standalone Express.js app.
-* [ ] **Integration:** Connect with Zapier/Webhooks for external automation.
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | `/kingkong/run-tasks` | Execute a natural language task programmatically. |
+| `POST` | `/internal-functions/.../run` | Trigger a specific serverless function. |
+| `GET` | `/analytics/usage` | Retrieve project resource consumption. |
 
 ---
 
 ## 👨‍💻 Author
 
-**Tunde Oluwamo**
-*Full Stack Developer & AI Integrations Specialist*
-[ linkedin.com/in/oluwamo-shadrach-740242185 ]
+**Tunde [Last Name]**
+*Full Stack Developer & AI Solutions Architect*
+[Link to Portfolio]
