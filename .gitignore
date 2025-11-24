@@ -32,6 +32,8 @@ pnpm-debug.log*
 
 # 2. Environment and Configuration (CRITICAL: NEVER COMMIT THESE)
 #################################################################
+/server/.env
+/client/.env
 .env
 .env.local
 .env.development
