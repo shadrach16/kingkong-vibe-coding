@@ -75,6 +75,6 @@ A "Mission Control" for your backend application.
 
 ## 👨‍💻 Author
 
-**Tunde [Last Name]**
-*Full Stack Developer & AI Solutions Architect*
-[Link to Portfolio]
+**Tunde Oluwamo**
+*Full Stack Developer & AI Integrations Specialist*
+[ linkedin.com/in/oluwamo-shadrach-740242185 ]
